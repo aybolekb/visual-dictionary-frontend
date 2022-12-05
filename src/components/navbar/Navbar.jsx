@@ -10,11 +10,11 @@ const Navbar = () => {
                 <Link to='/' className='link'>
                     <span className='navItem'>Home</span>
                 </Link>
-                <Link to='/new' className='link'>
+                <Link to='/add' className='link'>
                     <span className='navItem'>Add New Word</span>
                 </Link>
-                <Link to='/users' className='link'>
-                    <span className='navItem'>Users</span>
+                <Link to='/category' className='link'>
+                    <span className='navItem'>Add Category</span>
                 </Link>
               </div>
               </div>
