@@ -1,8 +1,8 @@
-
+import { MainUrl } from "../../url"
 
 const Add = () =>{
-   const PF = 'http://localhost:8080/file'
-   const img = 'http://localhost:8080/audio/about-info.jpg'
+   const PF = MainUrl+ '/file'
+   const img = MainUrl +'/audio/about-info.jpg'
    return(
       <div className="add">
         <audio src={PF}></audio>

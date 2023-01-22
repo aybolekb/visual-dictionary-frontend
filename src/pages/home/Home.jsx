@@ -4,12 +4,13 @@ import './home.css'
 import Navbar from '../../components/navbar/Navbar';
 import DoneIcon from '@mui/icons-material/Done'
 import {CircularProgress} from '@material-ui/core'
+import { MainUrl } from '../../url';
 
 import axios from 'axios'
 
 const Home = () => {
-   const PF = 'http://localhost:8080/file/'
-   console.log(PF)
+   const PF = MainUrl +'/file/'
+   console.log(MainUrl)
 
   const [data, setData] = useState({
     english: '',
@@ -31,7 +32,7 @@ const Home = () => {
   useEffect(()=>{
     const getAllCategory =async () =>{
        try {
-         const {data} = await axios.get('http://localhost:8080/api/v1/category')
+         const {data} = await axios.get(MainUrl+'/api/v1/category')
          
          setCategories(data)
        } catch (error) {
@@ -74,8 +75,8 @@ const Home = () => {
     formData.append(data.english, img)
     console.log(formData)
     try {
-      await axios.post('http://localhost:8080/api/v1/words', newWord)
-      await axios.post('http://localhost:8080/upload', formData, {
+      await axios.post(MainUrl+'/api/v1/words', newWord)
+      await axios.post(MainUrl + '/upload', formData, {
         headers: {
           "Content-Type": "multipart/form-data"
         }

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import DoneIcon from '@mui/icons-material/Done'
 import axios from 'axios'
 import {CircularProgress} from '@material-ui/core'
+import { MainUrl } from '../../url';
 
 
 
@@ -29,8 +30,8 @@ const Category = () =>{
       formData.append('ic-' + name, icon);
       console.log(formData)
       try {
-        await axios.post('http://localhost:8080/api/v1/category', newCategory)
-        await axios.post('http://localhost:8080/upload', formData, {
+        await axios.post(MainUrl+'/api/v1/category', newCategory)
+        await axios.post(MainUrl+'/upload', formData, {
           headers: {
             "Content-Type": "multipart/form-data"
           }
