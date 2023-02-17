@@ -16,7 +16,7 @@ const Home = () => {
     english: '',
     turkmen: '',
     enTrans: '',
-    tmTrans: '',
+    tmTrans: '', 
     img: '',
     example:'',
 
@@ -128,9 +128,13 @@ const Home = () => {
               <div className="items">
                   <label className='title'>Category</label>
                   <select id="category" className='select file' onChange={selectCategory}>
-                    {categories && categories.map((item) =>(
-                        <option key={item._id} value={item._id}>{item.name}</option>
-                    ))}
+                    {
+                    categories && categories.map(
+                      (item) => (
+                        console.log('-----------',item.category.name),
+                        <option key={item._id} value={item.category._id}>{item.category.name}</option>
+                    ))
+                    }
                   </select>
                   <input type="text" placeholder='Example'  className='input' id='example' onChange={handleChange} />
                 </div>
